@@ -3,6 +3,23 @@ package com.yk2;
 public class Main {
     public static void main(String[] args) {
 
+        Store store = new Store();
+
+        Producer producer = new Producer(store);
+        Consumer consumer = new Consumer(store);
+
+        Thread threadProducer = new Thread(producer);
+        Thread threadConsumer = new Thread(consumer);
+
+        threadConsumer.start();
+        threadProducer.start();
+
+        try {
+            threadConsumer.join();
+            threadProducer.join();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
 
