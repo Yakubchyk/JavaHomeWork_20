@@ -2,8 +2,8 @@ package com.yk3;
 
 public class FindMaxThread implements Runnable {
 
-    int[] numArr;
-    int max;
+    private int[] numArr;
+    private int max;
 
     public FindMaxThread(int[] numArr) {
         this.numArr = numArr;

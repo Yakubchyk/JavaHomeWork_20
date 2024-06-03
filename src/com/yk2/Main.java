@@ -14,12 +14,6 @@ public class Main {
         threadConsumer.start();
         threadProducer.start();
 
-        try {
-            threadConsumer.join();
-            threadProducer.join();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
     }
 }
 

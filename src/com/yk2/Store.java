@@ -2,7 +2,7 @@ package com.yk2;
 
 public class Store {
 
-    private int MAX_CAPACITY = 5;
+    private int MAX_CAPACITY = 500 ;
     private int product = 0;
 
     public synchronized void producieren() throws InterruptedException {
@@ -24,6 +24,4 @@ public class Store {
                 "В магазине сейчас " + product + " шт.");
         notify();
     }
-
-
 }
